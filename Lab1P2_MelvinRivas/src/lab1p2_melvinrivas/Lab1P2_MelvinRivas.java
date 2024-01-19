@@ -13,7 +13,6 @@ import java.util.regex.Pattern;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 
-
 /**
  *
  * @author l3306
@@ -25,7 +24,7 @@ public class Lab1P2_MelvinRivas {
      */
     public static void main(String[] args) throws ParseException {
         // TODO code application logic here
-        
+
         Scanner input = new Scanner(System.in);
         Pattern simbolos = Pattern.compile("[^?=!><$%]");
         ArrayList<Regis> regi = new ArrayList<>();
@@ -57,63 +56,100 @@ public class Lab1P2_MelvinRivas {
                     int veridias2 = 0;
                     Date fecha2;
                     boolean edad = false;
-                    do{
-                    System.out.print("Ingrese su fecha ejemplo(10/12/2022): ");
-                    //fecha1 = lo pido como string para despues usar parse y Simpledate format para poder 
-                    //pasarlo date
-                    String fecha1 = input.nextLine();
-                    SimpleDateFormat ajusfec = new SimpleDateFormat("dd/MM/yyyy");
-                    fecha2 = ajusfec.parse(fecha1);
-                    veriaño = fecha2.getYear();
-                    Date fecactual = new Date();
-                    veriaño2 = fecactual.getYear();
-                    veriaño2 = veriaño2 -13;
+                    do {
+                        System.out.print("Ingrese su fecha ejemplo(10/12/2022): ");
+                        //fecha1 = lo pido como string para despues usar parse y Simpledate format para poder 
+                        //pasarlo date
+                        String fecha1 = input.nextLine();
+                        SimpleDateFormat ajusfec = new SimpleDateFormat("dd/MM/yyyy");
+                        fecha2 = ajusfec.parse(fecha1);
+                        veriaño = fecha2.getYear();
+                        Date fecactual = new Date();
+                        veriaño2 = fecactual.getYear();
+                        veriaño2 = veriaño2 - 13;
                         if (veriaño2 >= veriaño) {
-                            
-                                    edad = true;        
-                                
+
+                            edad = true;
+
                         }
-                    }while(edad == false);
-                    
+                    } while (edad == false);
+
                     boolean vericorreo = false;
-                    String correo= "";
-                    do{
-                    System.out.print("Escriba su correo electronico: ");
-                    correo = input.nextLine();
-                    vericorreo = email(correo);
-                }while(vericorreo == false);
+                    String correo = "";
+                    do {
+                        System.out.print("Escriba su correo electronico: ");
+                        correo = input.nextLine();
+                        vericorreo = email(correo);
+                    } while (vericorreo == false);
                     boolean vericontra = false;
                     String contra = "";
-                    do{
-                    System.out.println("Ingrese su contraseña: ");
-                    //contra = contraseña
-                     contra = input.nextLine();
-                    vericontra = contraseña(contra);
-                    
-                    }while(vericontra==false);
-                    
-                    Regis regis = new Regis(nom,apellido,fecha2,correo,contra);
+                    do {
+                        System.out.println("Ingrese su contraseña: ");
+                        //contra = contraseña
+                        contra = input.nextLine();
+                        vericontra = contraseña(contra);
+
+                    } while (vericontra == false);
+
+                    Regis regis = new Regis(nom, apellido, fecha2, correo, contra);
                     regi.add(regis);
-                    
+
                     break;
                 }
                 case 2: {
                     System.out.println("***Listado***");
                     for (int i = 0; i < regi.size(); i++) {
-                        System.out.println(i+". "+regi.get(i).toString());
+                        int c = i+1;
+                        System.out.println(c + ". " + regi.get(i).toString());
                     }
                     break;
                 }
                 case 3: {
-
+                    String gmail = "gmail";
+                    for (int i = 0; i < regi.size(); i++) {
+                        if(gmail.contains(regi.get(i).getCorreo())){
+                        System.out.println(regi.get(i).toString());
+                        }
+                    }
+                    String outlook = "outlook";
+                    for (int i = 0; i < regi.size(); i++) {
+                        if (outlook.contains(regi.get(i).getCorreo())) {
+                            System.out.println(regi.get(i).toString());
+                        }
+                    }
+                    String yahoo = "yahoo";
+                    for (int i = 0; i < regi.size(); i++) {
+                        if (yahoo.contains(regi.get(i).getCorreo())) {
+                            System.out.println(regi.get(i).toString());
+                        }
+                    }
+                    String icloud = "icloud";
+                    for (int i = 0; i < regi.size(); i++) {
+                        if (icloud.contains(regi.get(i).getCorreo())) {
+                            System.out.println(regi.get(i).toString());
+                        }
+                    }
+                    String protonmail = "protonmail";
+                    for (int i = 0; i < regi.size(); i++) {
+                        if (protonmail.contains(regi.get(i).getCorreo())) {
+                            System.out.println(regi.get(i).toString());
+                        }
+                    }
+                    String fastmail = "fastmail";
+                    for (int i = 0; i < regi.size(); i++) {
+                        if (fastmail.contains(regi.get(i).getCorreo())) {
+                            System.out.println(regi.get(i).toString());
+                        }
+                    }
+                    
                     break;
                 }
                 case 4: {
-
+                    System.out.println("***Gracias por su preferencia***");
                     break;
                 }
                 default: {
-
+                    System.out.println("-----Caracter Invalido-----");
                     break;
                 }
             }
@@ -121,20 +157,22 @@ public class Lab1P2_MelvinRivas {
         } while (op != 4);
 
     }
-    public static boolean contraseña(String contra){
-        
+
+    public static boolean contraseña(String contra) {
+
         String regex = "^[a-zA-Z0-9._%&$+-?<>!]{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(contra);
         return matcher.matches();
-    
+
     }
-    public static boolean email (String correo){
-    
-String regex = "^[a-zA-Z0-9._%&$+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-Pattern pattern = Pattern.compile(regex);
-Matcher matcher = pattern.matcher(correo);
-return matcher.matches();
+
+    public static boolean email(String correo) {
+
+        String regex = "^[a-zA-Z0-9._%&$+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(correo);
+        return matcher.matches();
     }
 }
 // [] busca caracter por caracter lo que este adentro
