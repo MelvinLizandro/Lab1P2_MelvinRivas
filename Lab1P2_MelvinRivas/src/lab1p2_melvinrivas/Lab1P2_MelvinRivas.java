@@ -81,3 +81,6 @@ public class Lab1P2_MelvinRivas {
     }
 
 }
+// [] busca caracter por caracter lo que este adentro
+// [^ ] que sea diferente de ese carcter 
+//      que busque exactamente lo escrito
