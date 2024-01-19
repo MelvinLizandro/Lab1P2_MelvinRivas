@@ -99,7 +99,7 @@ public class Lab1P2_MelvinRivas {
                 case 2: {
                     System.out.println("***Listado***");
                     for (int i = 0; i < regi.size(); i++) {
-                        int c = i+1;
+                        int c = i + 1;
                         System.out.println(c + ". " + regi.get(i).toString());
                     }
                     break;
@@ -108,12 +108,12 @@ public class Lab1P2_MelvinRivas {
                     String gmail = "gmail";
                     System.out.println("***GMAIL***");
                     for (int i = 0; i < regi.size(); i++) {
-                        if(regi.get(i).getCorreo().contains(gmail)){
-                        System.out.println(regi.get(i).toString());
+                        if (regi.get(i).getCorreo().contains(gmail)) {
+                            System.out.println(regi.get(i).toString());
                         }
                     }
                     System.out.println("");
-                    
+
                     String outlook = "outlook";
                     System.out.println("***OUTLOOK***");
                     for (int i = 0; i < regi.size(); i++) {
@@ -153,7 +153,7 @@ public class Lab1P2_MelvinRivas {
                             System.out.println(regi.get(i).toString());
                         }
                     }
-                    
+
                     break;
                 }
                 case 4: {
