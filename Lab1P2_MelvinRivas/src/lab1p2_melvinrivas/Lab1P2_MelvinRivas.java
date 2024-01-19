@@ -106,38 +106,50 @@ public class Lab1P2_MelvinRivas {
                 }
                 case 3: {
                     String gmail = "gmail";
+                    System.out.println("***GMAIL***");
                     for (int i = 0; i < regi.size(); i++) {
-                        if(gmail.contains(regi.get(i).getCorreo())){
+                        if(regi.get(i).getCorreo().contains(gmail)){
                         System.out.println(regi.get(i).toString());
                         }
                     }
+                    System.out.println("");
+                    
                     String outlook = "outlook";
+                    System.out.println("***OUTLOOK***");
                     for (int i = 0; i < regi.size(); i++) {
-                        if (outlook.contains(regi.get(i).getCorreo())) {
+                        if (regi.get(i).getCorreo().contains(outlook)) {
                             System.out.println(regi.get(i).toString());
                         }
                     }
+                    System.out.println("");
                     String yahoo = "yahoo";
+                    System.out.println("***YAHOO***");
                     for (int i = 0; i < regi.size(); i++) {
-                        if (yahoo.contains(regi.get(i).getCorreo())) {
+                        if ((regi.get(i).getCorreo().contains(yahoo))) {
                             System.out.println(regi.get(i).toString());
                         }
                     }
+                    System.out.println("");
                     String icloud = "icloud";
+                    System.out.println("***ICLOUD***");
                     for (int i = 0; i < regi.size(); i++) {
-                        if (icloud.contains(regi.get(i).getCorreo())) {
+                        if ((regi.get(i).getCorreo().contains(icloud))) {
                             System.out.println(regi.get(i).toString());
                         }
                     }
+                    System.out.println("");
                     String protonmail = "protonmail";
+                    System.out.println("***PROTONMAIL***");
                     for (int i = 0; i < regi.size(); i++) {
-                        if (protonmail.contains(regi.get(i).getCorreo())) {
+                        if ((regi.get(i).getCorreo().contains(protonmail))) {
                             System.out.println(regi.get(i).toString());
                         }
                     }
+                    System.out.println("");
                     String fastmail = "fastmail";
+                    System.out.println("***FASTMAIL***");
                     for (int i = 0; i < regi.size(); i++) {
-                        if (fastmail.contains(regi.get(i).getCorreo())) {
+                        if ((regi.get(i).getCorreo().contains(fastmail))) {
                             System.out.println(regi.get(i).toString());
                         }
                     }
