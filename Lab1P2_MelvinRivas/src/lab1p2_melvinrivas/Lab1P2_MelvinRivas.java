@@ -26,7 +26,7 @@ public class Lab1P2_MelvinRivas {
         // TODO code application logic here
         
         Scanner input = new Scanner(System.in);
-        Pattern simbolos = Pattern.compile("^?=(!><$%)");
+        Pattern simbolos = Pattern.compile("[^?=!><$%]");
         ArrayList<Regis> regi = new ArrayList<>();
 
         //op = opciones
@@ -36,6 +36,7 @@ public class Lab1P2_MelvinRivas {
             System.out.println("2. Listar todo");
             System.out.println("3. Listar por dominio");
             System.out.println("4. Salir");
+            System.out.print("Que deesea realizar: ");
 
             op = input.nextInt();
 
@@ -44,17 +45,36 @@ public class Lab1P2_MelvinRivas {
                     System.out.print("Ingrese su nombre: ");
                     //nom = nombre
                     String nom = input.nextLine();
+                    nom = input.nextLine();
                     System.out.print("Ingrese su apellido: ");
                     String apellido = input.nextLine();
+                    int verificar = 0;
+                    int verificar2 = 0;
+                    Date fecha2;
+                    boolean edad = false;
+                    do{
                     System.out.print("Ingrese su fecha ejemplo(10/12/2022): ");
                     //fecha1 = lo pido como string para despues usar parse y Simpledate format para poder 
                     //pasarlo date
                     String fecha1 = input.nextLine();
-                    SimpleDateFormat ajusfec = new SimpleDateFormat("dd/MM/YYYY");
-                    Date fecha2 = ajusfec.parse(fecha1);
+                    SimpleDateFormat ajusfec = new SimpleDateFormat("dd/MM/yyyy");
+                    fecha2 = ajusfec.parse(fecha1);
+                    verificar = fecha2.getYear();
+                    Date fecactual = new Date();
+                    verificar2 = fecactual.getYear();
+                    verificar2 = verificar2 -13;
+                        System.out.println(verificar);
+                        System.out.println(verificar2);
+                        
+                        if (verificar2 >= verificar) {
+                            edad = true;
+                        }
+                    }while(edad == false);
+                    
+                    
                     System.out.print("Escriba su correo electronico: ");
                     String correo = input.nextLine();
-                    Boolean aparece= Pattern.matches(simnbolos, correo);
+                  
                     System.out.println("Ingrese su contraseña: ");
                     //contra = contraseña
                     String contra = input.nextLine();
