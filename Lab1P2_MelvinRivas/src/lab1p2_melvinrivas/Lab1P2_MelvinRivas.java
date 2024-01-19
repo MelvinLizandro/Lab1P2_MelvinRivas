@@ -48,8 +48,12 @@ public class Lab1P2_MelvinRivas {
                     nom = input.nextLine();
                     System.out.print("Ingrese su apellido: ");
                     String apellido = input.nextLine();
-                    int verificar = 0;
-                    int verificar2 = 0;
+                    int veriaño = 0;
+                    int veriaño2 = 0;
+                    int verimeses = 0;
+                    int verimeses2 = 0;
+                    int veridias = 0;
+                    int veridias2 = 0;
                     Date fecha2;
                     boolean edad = false;
                     do{
@@ -59,15 +63,14 @@ public class Lab1P2_MelvinRivas {
                     String fecha1 = input.nextLine();
                     SimpleDateFormat ajusfec = new SimpleDateFormat("dd/MM/yyyy");
                     fecha2 = ajusfec.parse(fecha1);
-                    verificar = fecha2.getYear();
+                    veriaño = fecha2.getYear();
                     Date fecactual = new Date();
-                    verificar2 = fecactual.getYear();
-                    verificar2 = verificar2 -13;
-                        System.out.println(verificar);
-                        System.out.println(verificar2);
-                        
-                        if (verificar2 >= verificar) {
-                            edad = true;
+                    veriaño2 = fecactual.getYear();
+                    veriaño2 = veriaño2 -13;
+                        if (veriaño2 >= veriaño) {
+                            
+                                    edad = true;        
+                                
                         }
                     }while(edad == false);
                     
