@@ -68,7 +68,7 @@ class Regis {
 
     @Override
     public String toString() {
-        return "Regis{" + "nombre=" + nombre + ", apellido=" + apellido + ", fecha=" + fecha + ", correo=" + correo + ", contrase\u00f1a=" + contraseña + '}';
+        return "nombre: " + nombre + ", apellido: " + apellido + ", fecha: " + fecha + ", correo: " + correo + ", contrase\u00f1a=" + contraseña + '}';
     }
 
 }

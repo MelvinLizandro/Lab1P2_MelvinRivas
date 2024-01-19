@@ -81,9 +81,17 @@ public class Lab1P2_MelvinRivas {
                     System.out.println("Ingrese su contraseña: ");
                     //contra = contraseña
                     String contra = input.nextLine();
+                    
+                    Regis regis = new Regis(nom,apellido,fecha2,correo,contra);
+                    regi.add(regis);
+                    
+                    break;
                 }
                 case 2: {
-
+                    System.out.println("***Listado***");
+                    for (int i = 0; i < regi.size(); i++) {
+                        System.out.println(i+". "+regi.get(i).toString());
+                    }
                     break;
                 }
                 case 3: {
@@ -99,10 +107,11 @@ public class Lab1P2_MelvinRivas {
                     break;
                 }
             }
+            System.out.println("");
         } while (op != 4);
 
     }
-
+    
 }
 // [] busca caracter por caracter lo que este adentro
 // [^ ] que sea diferente de ese carcter 
