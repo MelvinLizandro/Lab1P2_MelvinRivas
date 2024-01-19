@@ -11,6 +11,7 @@ import java.util.Scanner;
 import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
 
 
 /**
@@ -74,13 +75,22 @@ public class Lab1P2_MelvinRivas {
                         }
                     }while(edad == false);
                     
-                    
+                    boolean vericorreo = false;
+                    String correo= "";
+                    do{
                     System.out.print("Escriba su correo electronico: ");
-                    String correo = input.nextLine();
-                  
+                    correo = input.nextLine();
+                    vericorreo = email(correo);
+                }while(vericorreo == false);
+                    boolean vericontra = false;
+                    String contra = "";
+                    do{
                     System.out.println("Ingrese su contraseña: ");
                     //contra = contraseña
-                    String contra = input.nextLine();
+                     contra = input.nextLine();
+                    vericontra = contraseña(contra);
+                    
+                    }while(vericontra==false);
                     
                     Regis regis = new Regis(nom,apellido,fecha2,correo,contra);
                     regi.add(regis);
@@ -111,7 +121,21 @@ public class Lab1P2_MelvinRivas {
         } while (op != 4);
 
     }
+    public static boolean contraseña(String contra){
+        
+        String regex = "^[a-zA-Z0-9._%&$+-?<>!]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(contra);
+        return matcher.matches();
     
+    }
+    public static boolean email (String correo){
+    
+String regex = "^[a-zA-Z0-9._%&$+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+Pattern pattern = Pattern.compile(regex);
+Matcher matcher = pattern.matcher(correo);
+return matcher.matches();
+    }
 }
 // [] busca caracter por caracter lo que este adentro
 // [^ ] que sea diferente de ese carcter 
